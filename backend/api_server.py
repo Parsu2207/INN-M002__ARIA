@@ -1,4 +1,3 @@
-# backend/api_server.py
 from fastapi import FastAPI, HTTPException, Body, UploadFile, File
 from typing import List
 import json
