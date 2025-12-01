@@ -1,4 +1,3 @@
-# backend/config.py
 KAFKA_BOOTSTRAP_SERVERS = ["localhost:9092"]
 KAFKA_ALERT_TOPIC = "aria_alerts"
 
@@ -15,16 +14,17 @@ PRIORITY_BUCKETS = {
     "medium": 0.4
 }
 
-# Jira integration
+
 JIRA_BASE_URL = "https://shindep2207.atlassian.net"
 JIRA_USER_EMAIL = "shindep2207@gmail.com"
 JIRA_API_TOKEN = "your-api-token"
 JIRA_PROJECT_KEY = "ARIA"
 
-# Email (SMTP) integration
+
 SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USER = "shindep2207@gmail.com"
 SMTP_PASSWORD = "knwvegqgjqsdqavd"
 ALERT_EMAIL_TO = "shindep2207@gmail.com"
+
 
