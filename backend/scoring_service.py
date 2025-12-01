@@ -1,10 +1,10 @@
-# backend/scoring_service.py
+
 from .models import ScoredAlert, Alert
 from .config import PRIORITY_BUCKETS
 
 
 def simple_supervised_prob(features: dict) -> float:
-    # Very simple heuristic "model"
+   
     score = 0.0
     score += 0.2 * features.get("severity_level", 1)
     score += 0.5 * features.get("ip_reputation", 0.0)
@@ -14,7 +14,7 @@ def simple_supervised_prob(features: dict) -> float:
 
 def simple_anomaly_score(features: dict) -> float:
     hour = features.get("hour_of_day", 12)
-    # Treat late-night as more anomalous
+   
     if hour < 6 or hour > 22:
         return 0.8
     return 0.2
