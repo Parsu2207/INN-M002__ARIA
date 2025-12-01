@@ -1,10 +1,9 @@
-# backend/correlation_service.py
 from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import List
 from .models import ScoredAlert, Incident
 
-# In-memory store for demo desktop app
+
 _scored_alerts: List[ScoredAlert] = []
 _incidents: List[Incident] = []
 
@@ -17,7 +16,6 @@ def add_scored_alert(alert: ScoredAlert):
 def _rebuild_incidents(window_minutes: int = 15):
     global _incidents
 
-    # For demo: ignore time window and use all alerts
     recent = list(_scored_alerts)
     grouped = defaultdict(list)
 
