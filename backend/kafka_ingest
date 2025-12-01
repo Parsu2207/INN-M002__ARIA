@@ -1,4 +1,4 @@
-# backend/kafka_ingest.py
+
 import json
 from kafka import KafkaConsumer
 from .config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_ALERT_TOPIC
