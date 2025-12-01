@@ -18,7 +18,7 @@ PRIORITY_BUCKETS = {
 # Jira integration
 JIRA_BASE_URL = "https://shindep2207.atlassian.net"
 JIRA_USER_EMAIL = "shindep2207@gmail.com"
-JIRA_API_TOKEN = "ATATT3xFfGF08sWdN5FRior2f6tyzmOyO9568CH8som8DNMUprR_N7jSu-3ERfLx65K6z4-xKNyMCXQee1JFYX1F9-kVV24LKMBj8D46LuLbId03GUQtdG6cTxi_70sEd-kCCcw5xWOKkyqlrEno9T1yusFWZ-FJnjqi48HY3jhHFxbaRpSe8Xo=07F1B12C"
+JIRA_API_TOKEN = "your-api-token"
 JIRA_PROJECT_KEY = "ARIA"
 
 # Email (SMTP) integration
@@ -27,3 +27,4 @@ SMTP_PORT = 587
 SMTP_USER = "shindep2207@gmail.com"
 SMTP_PASSWORD = "knwvegqgjqsdqavd"
 ALERT_EMAIL_TO = "shindep2207@gmail.com"
+
