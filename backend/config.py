@@ -16,21 +16,18 @@ PRIORITY_BUCKETS = {
 }
 
 # Jira integration
-JIRA_BASE_URL = "https://your-domain.atlassian.net"
-JIRA_USER_EMAIL = "your-user@example.com"
-JIRA_API_TOKEN = "your-api-token"
-JIRA_PROJECT_KEY = "SOC"
+JIRA_BASE_URL = "https://shindep2207.atlassian.net"
+JIRA_USER_EMAIL = "shindep@gmail.com"
+JIRA_API_TOKEN = "ATATT3xFfGF0eHoPWa1A-eRUg4t42bPDQjv5Nbysz3LvRUlH-vPyaOuc6_s7U8-CZxmpRbl8voGkdW_B6yFvKm6EpW0x2KPttdOiPfseB1vvo--wkUg1PrX11BHE5XD053usk3R_kLJgi9e0maGg8GoTCxqGTrCY2gYhJsqOIfbEAb2ddiQR5DY=802E95E8"
+JIRA_PROJECT_KEY = "CRM"
 
 # Email (SMTP) integration
-SMTP_HOST = "smtp.yourmail.com"
+SMTP_HOST = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USER = "alerts@yourcompany.com"
-SMTP_PASSWORD = "your-smtp-password"
-ALERT_EMAIL_TO = "soc-team@yourcompany.com"
+SMTP_USER = "shindep2207@gmail.com"
+SMTP_PASSWORD = "Parsu47@22"
+ALERT_EMAIL_TO = "shindep2207@gmail.com"
 
-# SMS (Twilio) integration
-TWILIO_ACCOUNT_SID = "ACxxxxxxxxxxxxxxxxxxxx"
-TWILIO_AUTH_TOKEN = "your-twilio-token"
-TWILIO_FROM_NUMBER = "+15551234567"
-ALERT_SMS_TO = "+15557654321"
+
+
 
