@@ -18,8 +18,7 @@ def simple_anomaly_score(features: dict) -> float:
     if hour < 6 or hour > 22:
         return 0.8
     return 0.2
-
-
+    
 def compute_priority(supervised_prob: float, anomaly_score: float, rule_boost: float) -> float:
     return max(0.0, min(1.0, 0.6 * supervised_prob + 0.3 * anomaly_score + 0.1 * rule_boost))
 
