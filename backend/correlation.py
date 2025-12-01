@@ -16,16 +16,16 @@ def add_scored_alert(alert: ScoredAlert):
 
 def _rebuild_incidents(window_minutes: int = 15):
     global _incidents
-    now = datetime.utcnow()
-    window = now - timedelta(minutes=window_minutes)
 
-    recent = [a for a in _scored_alerts if a.timestamp >= window]
+    # For demo: ignore time window and use all alerts
+    recent = list(_scored_alerts)
     grouped = defaultdict(list)
 
     for a in recent:
         key = a.entities.get("user") or a.entities.get("ip") or "unknown"
         grouped[key].append(a)
 
+    now = datetime.utcnow()
     incidents = []
     for idx, (entity, alerts) in enumerate(grouped.items(), start=1):
         bucket = max(alerts, key=lambda x: x.priority_score).priority_bucket
@@ -48,4 +48,3 @@ def list_incidents() -> List[Incident]:
 
 def list_alerts() -> List[ScoredAlert]:
     return sorted(_scored_alerts, key=lambda a: a.priority_score, reverse=True)
-
