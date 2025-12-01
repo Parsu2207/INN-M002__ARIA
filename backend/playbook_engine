@@ -1,4 +1,4 @@
-# backend/playbook_engine.py
+
 from typing import Dict
 from .models import Incident
 from typing import Dict
@@ -76,11 +76,11 @@ def execute_playbook(incident: Incident, playbook_id: str) -> Dict:
         actions.append(f"Posted incident {incident.incident_id} to Slack channel #soc-alerts")
 
     elif playbook_id == "create_ticket":
-        # 1) Create Jira ticket
+        
         issue_key = _create_jira_issue(incident)
         actions.append(f"Created Jira ticket {issue_key} for incident {incident.incident_id}")
 
-        # 2) Send email
+        
         subject = f"[ARIA] {incident.priority_bucket} incident {incident.incident_id} – Jira {issue_key}"
         body = f"Incident {incident.incident_id} created.\nJira: {issue_key}\nEntities: {incident.entities}\nAlert count: {len(incident.alerts)}"
         _send_email(subject, body, ALERT_EMAIL_TO)
