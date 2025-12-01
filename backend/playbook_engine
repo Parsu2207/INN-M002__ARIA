@@ -1,1 +1,21 @@
+#backend/playbook_engine.py
+from typing import Dict
+from .models immport Incident
 
+def execute_playbook(incident:Incident,playbook_id:str)->Dict:
+#placeholder;in real app integrate Slack/jira/ServiceNow
+actions=[]
+
+if playbook_id=="notify_slack":
+  actions.append(f"Posted incident{incident.incident_id}to Slack channel #soc-alerts")
+elif playbook_id=="create_ticket":
+  actions.append(f"Created ticket for {incident.incident_id} in jira")
+else:
+  actions.append(f"No-op playbook{playbook_id}")
+
+return{
+"incident_id":incident.incident_id,
+"playbook_id":playbook_id,
+"actions":actions,
+"status":"success"
+}
