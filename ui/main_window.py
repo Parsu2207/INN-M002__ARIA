@@ -1,4 +1,4 @@
-# ui/main_window.py
+
 from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QComboBox, QTableView, QMessageBox
@@ -10,7 +10,7 @@ from .api_client import ApiClient
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.api = ApiClient()# ui/main_window.py
+        self.api = ApiClient()
 from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
     QPushButton, QComboBox, QTableView, QLabel, QFrame
@@ -29,7 +29,6 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("ARIA Desktop – Alert & Response Intelligence Agent")
         self.resize(1200, 650)
 
-        # ---------- MAIN CONTAINER ----------
         central = QWidget()
         main_layout = QVBoxLayout()
         main_layout.setContentsMargins(15, 15, 15, 15)
@@ -37,17 +36,14 @@ class MainWindow(QMainWindow):
         central.setLayout(main_layout)
         self.setCentralWidget(central)
 
-        # ---------- BACKGROUND COLOR ----------
-        central.setStyleSheet("background-color: #e0f2f7;")  # soft blue-grey background
+        central.setStyleSheet("background-color: #e0f2f7;")  
 
-        # ---------- TITLE LABEL ----------
         title = QLabel("SOC Alert Monitoring Dashboard")
         title.setFont(QFont("courier", 22, QFont.Bold))
-        title.setStyleSheet("color: #1F2937;")  # dark grey
+        title.setStyleSheet("color: #1F2937;") 
         title.setAlignment(Qt.AlignCenter)
         main_layout.addWidget(title)
 
-        # ---------- TOP CONTROL BAR ----------
         control_bar = QHBoxLayout()
         control_bar.setSpacing(15)
 
@@ -73,7 +69,7 @@ class MainWindow(QMainWindow):
         self.refresh_btn = QPushButton("Refresh Alerts")
         self.refresh_btn.setStyleSheet("""
             QPushButton {
-                background-color: #0057B8;  /* professional deep blue */
+                background-color: #0057B8;  
                 color: white;
                 font-weight: bold;
                 padding: 6px 20px;
@@ -91,29 +87,25 @@ class MainWindow(QMainWindow):
         control_bar.addStretch()
         main_layout.addLayout(control_bar)
 
-        # ---------- SEPARATOR ----------
         separator = QFrame()
         separator.setFrameShape(QFrame.HLine)
         separator.setFrameShadow(QFrame.Sunken)
-        separator.setStyleSheet("color: #B0B0B0;")  # lighter separator for contrast
+        separator.setStyleSheet("color: #B0B0B0;")  
         main_layout.addWidget(separator)
 
-        # ---------- TABLE VIEW ----------
         self.table = QTableView()
         self.model = AlertsTableModel()
         self.table.setModel(self.model)
 
-        # Alternating row colors
         self.table.setAlternatingRowColors(True)
         pal = self.table.palette()
-        pal.setColor(QPalette.Base, QColor("#FFFFFF"))  # table background
-        pal.setColor(QPalette.AlternateBase, QColor("#F1F4F8"))  # subtle alternate
+        pal.setColor(QPalette.Base, QColor("#FFFFFF")) 
+        pal.setColor(QPalette.AlternateBase, QColor("#F1F4F8")) 
         self.table.setPalette(pal)
 
-        # Header styling
         self.table.horizontalHeader().setStyleSheet("""
             QHeaderView::section {
-                background-color: #0F172A;  /* very dark blue header */
+                background-color: #0F172A; 
                 color: white;
                 padding: 6px;
                 font-size: 12px;
@@ -122,13 +114,12 @@ class MainWindow(QMainWindow):
             }
         """)
 
-        # Table styling
         self.table.setStyleSheet("""
             QTableView {
-                font-size: 12px;
+                font-size: 13px;
                 font-family:'Segoe UI';
                 gridline-color: #D0D0D0;
-                selection-background-color: #CCE4FF;  /* soft selection */
+                selection-background-color: #CCE4FF;  
                 border-radius: 5px;
             }
             QTableView::item:selected {
@@ -142,7 +133,6 @@ class MainWindow(QMainWindow):
 
         main_layout.addWidget(self.table)
 
-        # Load initial alerts
         self.refresh_alerts()
 
     def refresh_alerts(self):
